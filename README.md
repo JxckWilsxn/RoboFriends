@@ -1,12 +1,32 @@
-# React + Vite
+# RoboFriends Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React 'CRUD' app made with Vite that allows the ability to search, add, and remove friends. 
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Search Robots**: Real-time filtering of results based on user input.
+- **Friend List**: Add or remove friends from a friend list.
+- **Dark Mode**: Toggle between light and dark themes with persistent storage.
+- **Persistent State**: Uses `localStorage` to save friend list and theme preferences across sessions.
+- **API Integration**: Fetches robot data from [RoboHash API](https://robohash.org/).
+- **Responsive UI**: Built with modern React best practices and Tailwind CSS for a responsive, mobile-friendly experience.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Built With
+
+- [React](https://reactjs.org/) – UI library for building interactive components
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework for fast styling
+- [RoboHash API](https://robohash.org/) – Dynamic robot image generator
+- [localStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) – For persistent theme and friend data
+
+
+## 📸 Screenshots
+
+### Light Mode
+![RobofriendsLightMode](https://github.com/user-attachments/assets/00899158-8175-4458-b24d-2df2f9f95a12)
+
+
+### Dark Mode
+![RobofriendsDarkMode](https://github.com/user-attachments/assets/415935ca-df19-44f1-89ab-5b4cfc185364)
+
