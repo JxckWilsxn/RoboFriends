@@ -3,7 +3,7 @@ import React from 'react';
 const SearchBox = ({ searchChange }) => {
     return (
         <div className='p-2'>
-            <input className='p-3 border border-[#f5f5f5] bg-[#dbdbdb] text-black rounded-xl w-[300px]' type="search" 
+            <input className='p-3 border border-none bg-[#dbdbdb] dark:bg-[#474747] text-black dark:text-white rounded-xl w-[300px]' type="search" 
             placeholder="search robots" 
             onChange={searchChange}
             />
