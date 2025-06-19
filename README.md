@@ -20,7 +20,7 @@ A React 'CRUD' app made with Vite that allows the ability to search, add, and re
 - [RoboHash API](https://robohash.org/) – Dynamic robot image generator
 - [localStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) – For persistent theme and friend data
 
-
+ 
 ## 📸 Screenshots
 
 ### Light Mode
