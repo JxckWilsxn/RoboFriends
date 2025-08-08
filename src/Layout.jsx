@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
-import DarkMode from "./components/Darkmode";
+import DarkMode from "./components/DarkMode";
 import SearchBox from "./components/SearchBox";
 import ErrorBoundry from './components/ErrorBoundry';
 
