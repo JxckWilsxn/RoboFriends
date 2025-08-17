@@ -1,25 +1,34 @@
-import React from 'react'
-import AddButton from './AddButton'
-import RemoveButton from  './RemoveButton'
+import React from 'react';
+import AddButton from './AddButton';
+import RemoveButton from  './RemoveButton';
+import Pin from './Pin';
+import Unpin from './Unpin';
 import { useOutletContext } from 'react-router-dom';
 
 const Card = ({ name, email, id }) => {
-    const { friendsIds } = useOutletContext(); // get the function from friendlist
+    const { friendsIds, pinnedIds } = useOutletContext(); // get the function from friendlist
 
     return (
-        <div className="text-center bg-[#00000027] dark:bg-[#202020] backdrop-blur-sm text-black dark:text-white inline-block rounded-xl p-3 m-2 shadow-xl duration-100 hover:scale-105 active:scale-95">
-            <img src={`https://robohash.org/${id}?200x200`} alt="robots" />
-            <div>
+        <div className="text-center bg-[#00000027] dark:bg-[rgb(32,32,32)] backdrop-blur-sm text-black dark:text-white inline-block rounded-xl p-5 m-3 shadow-xl w-[400px] duration-100 hover:scale-105 active:scale-95 group">
+            { pinnedIds.includes(id) ? (
+                <Unpin id={id}/>
+            ) : (
+                <Pin id={id}/>      
+            )}
+
+            <img src={`https://ui-avatars.com/api/?name=${name}&size=75&background=random&rounded=true`} alt="robots" className="m-auto p-2.5"/>
+
+            <div className='m-2.5'>
                 <h2 className="text-2xl font-semibold">{name}</h2>
                 <p>{email}</p>
-              
-                { friendsIds.includes(id) ? (
-                    <RemoveButton id={id}/>
-                ) : (
-                    <AddButton id={id}/>        
-                )}
-       
             </div>
+
+   
+            { friendsIds.includes(id) ? (
+                <RemoveButton id={id}/>
+            ) : (
+                <AddButton id={id}/>        
+            )}
         </div>
     );
 }

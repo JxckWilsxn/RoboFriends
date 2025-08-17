@@ -32,23 +32,43 @@ export const Layout = () => {
 
     // Function to add an ID to the friend list (without duplicates)
     const addFriend = (id) => {
-        setFriendIds((prev) => prev.includes(id) ? prev : [...prev, id]) // if previous state includes ID then add new id to friendlist
+        setFriendIds((prev) => prev.includes(id) ? prev : [...prev, id]) // if the previous (prev) state already includes ID then keep same, otherwise add new id to friendlist.
     }
 
     const removeFriend = (id) => {
         setFriendIds((prev) => prev.filter(friendsId => friendsId !== id)); // keeps IDs that don't match the one removed
     }
 
+    const [pinnedIds, setPinnedIds] = useState(() => {
+        const savedPins = localStorage.getItem('pinned-friends');
+        return savedPins ? JSON.parse(savedPins) : [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem('pinned-friends', JSON.stringify(pinnedIds));
+    }, [pinnedIds]);
+    
+    const pinFriend = (id) => {
+        setPinnedIds((prev) => prev.includes(id) ? prev : [...prev, id]); // does previous state of pinnedFriends array already include the selected ID? yes=keep the same, no=return new array with id added.
+    }
+
+    const unpinFriend = (id) => {
+        setPinnedIds((prev) => prev.filter(pinnedIds => pinnedIds !== id)); // keeps IDs that don't match the one removed
+    }
+
+    const pinnedFriendCards = filteredRobots.filter(robot => pinnedIds.includes(robot.id));
+    const combinedArray = [...pinnedFriendCards, ...filteredRobots.filter(robot => !pinnedIds.includes(robot.id))];
+
     return (
         <div className='text-center'>
-            <h1 className='p-4 text-[75px] font-bold bg-clip-text bg-gradient-to-r from-[#204cc6] to-[#03d1ff] inline-block text-transparent'>RoboFriends</h1>
+            <h1 className='p-4 text-[75px] font-bold bg-clip-text bg-gradient-to-r from-[#204cc6] to-[#03d1ff] inline-block text-transparent'>FriendSpace</h1>
             <DarkMode/>
             <SearchBox searchChange={onSearchChange}/>
             <Navbar/>
             <main>
                 <ErrorBoundry>
                     {/* Share friendIds and addFriend with all pages */}
-                    <Outlet context={{ filteredRobots, friendsIds, addFriend, removeFriend }}/>
+                    <Outlet context={{ filteredRobots, friendsIds, addFriend, pinnedIds, removeFriend, pinFriend, unpinFriend, combinedArray }}/>
                 </ErrorBoundry>
             </main>
         </div>

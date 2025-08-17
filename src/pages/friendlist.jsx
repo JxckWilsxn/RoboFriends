@@ -4,11 +4,10 @@ import Scroll from '../components/Scroll';
 import { Navbar } from '../components/Navbar';
 
 const FriendList = () => {
-    const { friendsIds } = useOutletContext();  // get the saved friend IDs
-    const { filteredRobots } = useOutletContext(); // reuse filtered list from Layout or Home
+    const { friendsIds, combinedArray } = useOutletContext();  // get the saved friend IDs and reuse filtered list from Layout or Home
 
     // Filter only robots that were added as friends
-    const friendRobots = filteredRobots.filter(robot => friendsIds.includes(robot.id))
+    const friendRobots = combinedArray.filter(robot => friendsIds.includes(robot.id))
     
     return (
         <div>

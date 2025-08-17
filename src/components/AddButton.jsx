@@ -10,9 +10,11 @@ const AddButton = ({ id }) => {
     }
 
     return (
+        <div className='flex justify-center'>
         <button className='bg-white dark:bg-[#474747] hover:bg-blue-500 hover:text-white cursor-pointer p-2 rounded-xl w-[100%]' onClick={handleClick}>
             Add Friend
         </button>
+        </div>
     )
 };
 

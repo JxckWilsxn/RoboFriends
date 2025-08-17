@@ -1,9 +1,10 @@
 import { useOutletContext } from 'react-router-dom';
 import CardList from '../components/CardList';
 import Scroll from '../components/Scroll';
+import { Layout } from '../Layout';
 
 const Home = () => {
-    const { filteredRobots } = useOutletContext();
+    const { filteredRobots, combinedArray } = useOutletContext();
 
     return !filteredRobots.length ?
     <Scroll>
@@ -13,8 +14,7 @@ const Home = () => {
         <div>
             <Scroll>
                 <CardList 
-                    robots={filteredRobots}
-                    renderButton={(id) => <FriendButton id={id} />}
+                   robots = {combinedArray}
                 />
             </Scroll>
         </div>

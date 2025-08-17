@@ -6,7 +6,7 @@ const RemoveButton = ({ id }) => {
 
     const handleClick = () => {
         console.log(id);
-        removeFriend(id); // add this robot's ID to the friend list
+        removeFriend(id); // remove this robot's ID from the friend list
     }
 
     return (
