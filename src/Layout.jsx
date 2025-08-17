@@ -7,7 +7,7 @@ import ErrorBoundry from './components/ErrorBoundry';
 
 export const Layout = () => {
     const [searchfield, setSearchfield] = useState('');
-    const [robots, setRobots] = useState([]);
+    const [people, setPeople] = useState([]);
     const [friendsIds, setFriendIds] = useState(() => {
         const saved = localStorage.getItem('friends');
         return saved ? JSON.parse(saved) : [];
@@ -18,7 +18,7 @@ export const Layout = () => {
         
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
-            .then(users => setRobots(users))
+            .then(users => setPeople(users))
     }, [friendsIds]);
 
     const onSearchChange = (event) => {
@@ -26,8 +26,8 @@ export const Layout = () => {
     }
 
 
-    const filteredRobots = robots.filter(robot => {
-        return robot.name.toLowerCase().includes(searchfield.toLowerCase())
+    const filteredPeopleList = people.filter(person => {
+        return person.name.toLowerCase().includes(searchfield.toLowerCase())
     })
 
     // Function to add an ID to the friend list (without duplicates)
@@ -56,19 +56,19 @@ export const Layout = () => {
         setPinnedIds((prev) => prev.filter(pinnedIds => pinnedIds !== id)); // keeps IDs that don't match the one removed
     }
 
-    const pinnedFriendCards = filteredRobots.filter(robot => pinnedIds.includes(robot.id));
-    const combinedArray = [...pinnedFriendCards, ...filteredRobots.filter(robot => !pinnedIds.includes(robot.id))];
+    const pinnedFriendCards = filteredPeopleList.filter(person => pinnedIds.includes(person.id));
+    const combinedArray = [...pinnedFriendCards, ...filteredPeopleList.filter(person => !pinnedIds.includes(person.id))];
 
     return (
         <div className='text-center'>
-            <h1 className='p-4 text-[75px] font-bold bg-clip-text bg-gradient-to-r from-[#204cc6] to-[#03d1ff] inline-block text-transparent'>FriendSpace</h1>
+            <h1 className='p-4 text-[35px] sm:text-[75px] font-bold bg-clip-text bg-gradient-to-r from-[#204cc6] to-[#03d1ff] inline-block text-transparent'>Concisetacts</h1>
             <DarkMode/>
             <SearchBox searchChange={onSearchChange}/>
             <Navbar/>
             <main>
                 <ErrorBoundry>
                     {/* Share friendIds and addFriend with all pages */}
-                    <Outlet context={{ filteredRobots, friendsIds, addFriend, pinnedIds, removeFriend, pinFriend, unpinFriend, combinedArray }}/>
+                    <Outlet context={{ filteredPeopleList, friendsIds, addFriend, pinnedIds, removeFriend, pinFriend, unpinFriend, combinedArray }}/>
                 </ErrorBoundry>
             </main>
         </div>

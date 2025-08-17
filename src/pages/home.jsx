@@ -4,17 +4,17 @@ import Scroll from '../components/Scroll';
 import { Layout } from '../Layout';
 
 const Home = () => {
-    const { filteredRobots, combinedArray } = useOutletContext();
+    const { filteredPeopleList, combinedArray } = useOutletContext();
 
-    return !filteredRobots.length ?
-    <Scroll>
-        <h1 className='m-25 text-2xl dark:text-[#f5f5f5]'>No results found</h1>
-    </Scroll> :
-    (
+    return !filteredPeopleList.length ?
+        <Scroll>
+            <h1 className='m-25 text-2xl dark:text-[#f5f5f5]'>No results found</h1>
+        </Scroll> 
+    :(
         <div>
             <Scroll>
                 <CardList 
-                   robots = {combinedArray}
+                   people = {combinedArray}
                 />
             </Scroll>
         </div>

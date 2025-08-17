@@ -1,13 +1,13 @@
 import { useOutletContext } from 'react-router-dom';
 import CardList from '../components/CardList';
 import Scroll from '../components/Scroll';
-import { Navbar } from '../components/Navbar';
+
 
 const FriendList = () => {
     const { friendsIds, combinedArray } = useOutletContext();  // get the saved friend IDs and reuse filtered list from Layout or Home
 
-    // Filter only robots that were added as friends
-    const friendRobots = combinedArray.filter(robot => friendsIds.includes(robot.id))
+    // Filter only people that were added as friends
+    const friendList = combinedArray.filter(person => friendsIds.includes(person.id))
     
     return (
         <div>
@@ -19,7 +19,7 @@ const FriendList = () => {
                 </Scroll>
             ) : (
                 <Scroll>
-                    <CardList robots={friendRobots} />
+                    <CardList people={friendList} />
                 </Scroll>
             )}
         </div>

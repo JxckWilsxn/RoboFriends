@@ -10,7 +10,7 @@ const Pin = ({ id }) => {
     }
     
     return (
-        <button id="pin-icon" onClick={pinPerson} className={`w-[50px] h-[50px] hidden cursor-pointer rounded-3xl absolute hover:bg-[#05050575] group-hover:flex`}>
+        <button id="pin-icon" onClick={pinPerson} className={"w-[50px] h-[50px] flex lg:hidden cursor-pointer rounded-3xl absolute hover:bg-[#05050575] group-hover:flex"}>
             <div className="m-auto">
                 <BsFillPinFill />
             </div>
