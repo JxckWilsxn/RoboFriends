@@ -11,7 +11,7 @@ const FriendList = () => {
     
     return (
         <div>
-            <h1 className="text-center text-[30px] text-[#181818] dark:text-[#f5f5f5]">friends list</h1>
+            <h1 className="text-center text-[30px] text-[#181818] dark:text-[#f5f5f5]">Friends List</h1>
         
             { friendsIds.length === 0 ? (
                 <Scroll>

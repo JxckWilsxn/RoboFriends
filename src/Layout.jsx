@@ -3,7 +3,8 @@ import { Outlet } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import DarkMode from "./components/DarkMode";
 import SearchBox from "./components/SearchBox";
-import ErrorBoundry from './components/ErrorBoundry';
+import { ToastContainer, toast } from "react-toastify";
+import ErrorBoundry from "./components/ErrorBoundry";
 
 export const Layout = () => {
     const [searchfield, setSearchfield] = useState('');
@@ -39,6 +40,14 @@ export const Layout = () => {
         setFriendIds((prev) => prev.filter(friendsId => friendsId !== id)); // keeps IDs that don't match the one removed
     }
 
+    const messageClick = () => {
+        toast("Message request sent.", {
+        position: "top-right",
+        autoClose: 2000,
+        pauseOnHover: false,
+        });
+    }
+
     const [pinnedIds, setPinnedIds] = useState(() => {
         const savedPins = localStorage.getItem('pinned-friends');
         return savedPins ? JSON.parse(savedPins) : [];
@@ -63,15 +72,16 @@ export const Layout = () => {
         <div>
             <div className="ml-10 text-[#000000] dark:text-[#FFFFFF]">
                 <h1 className="mt-10 text-[35px] sm:text-[75px] font-semibold">Con<span className="text-[#0077FF]">cise</span>tact</h1>
-                <h2 className="mb-10 sm:text-[24px] font-medium"><span className="text-[#0077FF] sm:text-[30px] font-caveat">Effortless </span> and all in one place.</h2>
+                <h2 className="mb-10 sm:text-[24px] font-medium"><span className="text-[#0077FF] sm:text-[30px] mr-1 font-caveat underline decoration-black dark:decoration-white underline-offset-6">Effortless</span> and all in one place.</h2>
             </div>
             <DarkMode/>
+            <ToastContainer />
             <SearchBox searchChange={onSearchChange}/>
             <Navbar/>
             <main className="text-center">
                 <ErrorBoundry>
                     {/* Share friendIds and addFriend with all pages */}
-                    <Outlet context={{ filteredPeopleList, friendsIds, addFriend, pinnedIds, removeFriend, pinFriend, unpinFriend, combinedArray }}/>
+                    <Outlet context={{ filteredPeopleList, friendsIds, addFriend, pinnedIds, removeFriend, messageClick, pinFriend, unpinFriend, combinedArray }}/>
                 </ErrorBoundry>
             </main>
         </div>
