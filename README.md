@@ -9,7 +9,7 @@ A React 'CRUD' app made with Vite that allows the ability to search, add, pin, a
 - **Friend List**: Add or remove friends from a friend list.
 - **Dark Mode**: Toggle between light and dark themes with persistent storage.
 - **Persistent State**: Uses `localStorage` to save friends added and/or pinned, and theme preferences across sessions.
-- **API Integration**: Fetches users pictures from [UI Avatars API](https://ui-avatars.com/) and users perosnal information from [JSONPlaceholder API](https://jsonplaceholder.typicode.com/users).
+- **API Integration**: Fetches user's pictures from [UI Avatars API](https://ui-avatars.com/) and user's personal information from [JSONPlaceholder API](https://jsonplaceholder.typicode.com/users).
 - **Responsive UI**: Built with modern React best practices and Tailwind CSS for a responsive, mobile-friendly experience.
 
 
@@ -24,10 +24,12 @@ A React 'CRUD' app made with Vite that allows the ability to search, add, pin, a
  
 ## 📸 Screenshots
 
-### Light Mode
-![RobofriendsLightMode](https://github.com/user-attachments/assets/00899158-8175-4458-b24d-2df2f9f95a12)
+### Light Mode Desktop
+![ConcisetactLightMode](https://github.com/user-attachments/assets/6c019184-6208-4ed5-a065-a47b04c84952)
 
 
-### Dark Mode
-![RobofriendsDarkMode](https://github.com/user-attachments/assets/415935ca-df19-44f1-89ab-5b4cfc185364)
+### Dark Mode Desktop
+![ConcisetactDarkMode](https://github.com/user-attachments/assets/d29c8756-e452-458c-a11f-d01d9984e196)
+
+
 
