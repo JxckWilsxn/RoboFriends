@@ -25,7 +25,7 @@ const DarkMode = () => {
   }, [isActive]);
 
   return (
-    <button  className='absolute top-15 right-4 sm:top-15 sm:right-15 text-3xl text-black dark:text-white' 
+    <button  className='absolute top-15 right-10 sm:top-15 text-3xl text-black dark:text-white' 
       onClick={() => setIsActive(!isActive)}
       aria-label='Toggle Dark Mode'>
 
