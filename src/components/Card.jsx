@@ -9,7 +9,7 @@ const Card = ({ name, email, id }) => {
     const { friendsIds, pinnedIds } = useOutletContext(); // get the function from friendlist
 
     return (
-        <div className="text-center bg-[#00000027] dark:bg-[rgb(32,32,32)] backdrop-blur-sm text-black dark:text-white inline-block rounded-xl p-5 m-3 shadow-xl w-[300px] sm:w-[370px] duration-100 hover:scale-105 active:scale-95 group">
+        <div className="text-center bg-[#a5a3a355] dark:bg-[#2b2b2b55] backdrop-blur-sm text-black dark:text-white inline-block rounded-xl p-5 m-3 shadow-xl w-[300px] sm:w-[350px] duration-100 hover:scale-105 active:scale-95 group">
             {friendsIds.includes(id) ? (
                 pinnedIds.includes(id) ? (
                     <Unpin id={id}/>

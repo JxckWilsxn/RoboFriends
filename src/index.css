@@ -1,22 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-raleway: "Raleway", sans-serif;
+    --font-caveat: "Caveat", cursive;
+}
 
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
-    background: #eeeeee;
-}
-
-body.dark {
-    background: black;
-}
-
-h1 {
-    font-family: "Kanit", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+    /*background: #eeeeee;*/
 }
 
 button {
@@ -36,7 +31,7 @@ button {
     height: 3px;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(#204cc6, #03d1ff);
+    background-image: linear-gradient(#0077FF);
     transition: transform 0.25s ease-out;
     transform-origin: bottom right;
 }

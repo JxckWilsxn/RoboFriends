@@ -60,12 +60,15 @@ export const Layout = () => {
     const combinedArray = [...pinnedFriendCards, ...filteredPeopleList.filter(person => !pinnedIds.includes(person.id))];
 
     return (
-        <div className='text-center'>
-            <h1 className='p-4 text-[35px] sm:text-[75px] font-bold bg-clip-text bg-gradient-to-r from-[#204cc6] to-[#03d1ff] inline-block text-transparent'>Concisetacts</h1>
+        <div>
+            <div className="ml-10 text-[#000000] dark:text-[#FFFFFF]">
+                <h1 className="mt-10 text-[35px] sm:text-[75px] font-semibold">Con<span className="text-[#0077FF]">cise</span>tact</h1>
+                <h2 className="mb-10 sm:text-[24px] font-medium"><span className="text-[#0077FF] sm:text-[30px] font-caveat">Effortless </span> and all in one place.</h2>
+            </div>
             <DarkMode/>
             <SearchBox searchChange={onSearchChange}/>
             <Navbar/>
-            <main>
+            <main className="text-center">
                 <ErrorBoundry>
                     {/* Share friendIds and addFriend with all pages */}
                     <Outlet context={{ filteredPeopleList, friendsIds, addFriend, pinnedIds, removeFriend, pinFriend, unpinFriend, combinedArray }}/>
