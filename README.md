@@ -1,15 +1,15 @@
-# RoboFriends Overview
+# Concisetact Overview
 
-A React 'CRUD' app made with Vite that allows the ability to search, add, and remove friends. 
+A React 'CRUD' app made with Vite that allows the ability to search, add, pin, and remove friends. 
 
 
 ## Features
 
-- **Search Robots**: Real-time filtering of results based on user input.
+- **Search Contacts**: Real-time filtering of results based on user input.
 - **Friend List**: Add or remove friends from a friend list.
 - **Dark Mode**: Toggle between light and dark themes with persistent storage.
-- **Persistent State**: Uses `localStorage` to save friend list and theme preferences across sessions.
-- **API Integration**: Fetches robot data from [RoboHash API](https://robohash.org/).
+- **Persistent State**: Uses `localStorage` to save friends added and/or pinned, and theme preferences across sessions.
+- **API Integration**: Fetches users pictures from [UI Avatars API](https://ui-avatars.com/) and users perosnal information from [JSONPlaceholder API](https://jsonplaceholder.typicode.com/users).
 - **Responsive UI**: Built with modern React best practices and Tailwind CSS for a responsive, mobile-friendly experience.
 
 
@@ -17,7 +17,8 @@ A React 'CRUD' app made with Vite that allows the ability to search, add, and re
 
 - [React](https://reactjs.org/) – UI library for building interactive components
 - [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework for fast styling
-- [RoboHash API](https://robohash.org/) – Dynamic robot image generator
+- [UI Avatars API](https://ui-avatars.com/) – Dynamic initials profile image generator
+- [JSONPlaceholder API](https://jsonplaceholder.typicode.com/users) – User information placeholders
 - [localStorage API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) – For persistent theme and friend data
 
  
