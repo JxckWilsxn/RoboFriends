@@ -1,10 +1,10 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
+import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
 
 const DarkMode = () => {
-  const darkTheme = <MdDarkMode />;
-  const lightTheme = <MdOutlineDarkMode />;
+  const darkTheme = <MdOutlineDarkMode />;
+  const lightTheme = <MdOutlineLightMode />;
   
   const [isActive, setIsActive] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -25,11 +25,11 @@ const DarkMode = () => {
   }, [isActive]);
 
   return (
-    <button  className='absolute top-7 right-4 sm:top-15 sm:right-15 text-2xl text-black dark:text-white' 
+    <button  className='absolute top-15 right-4 sm:top-15 sm:right-15 text-3xl text-black dark:text-white' 
       onClick={() => setIsActive(!isActive)}
       aria-label='Toggle Dark Mode'>
 
-      {isActive ? lightTheme : darkTheme}
+      {isActive ? darkTheme : lightTheme}
     </button>
   )
 };
