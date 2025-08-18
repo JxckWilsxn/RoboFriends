@@ -71,8 +71,8 @@ export const Layout = () => {
     return (
         <div>
             <div className="ml-10 text-[#000000] dark:text-[#FFFFFF]">
-                <h1 className="mt-10 text-[35px] sm:text-[75px] font-semibold">Con<span className="text-[#0077FF]">cise</span>tact</h1>
-                <h2 className="mb-10 sm:text-[24px] font-medium"><span className="text-[#0077FF] sm:text-[30px] mr-1 font-caveat underline decoration-black dark:decoration-white underline-offset-6">Effortless</span> and all in one place.</h2>
+                <h1 className="mt-10 text-[45px] sm:text-[75px] font-semibold">Con<span className="text-[#0077FF]">cise</span>tact</h1>
+                <h2 className="mb-10 text-[20px] sm:text-[24px] font-medium"><span className="text-[#0077FF] sm:text-[30px] mr-1 font-caveat underline decoration-black dark:decoration-white underline-offset-6">Effortless</span> and all in one place.</h2>
             </div>
             <DarkMode/>
             <ToastContainer />

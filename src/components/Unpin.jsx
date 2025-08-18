@@ -10,7 +10,7 @@ const Unpin = ({ id }) => {
     }
     
     return (
-        <button id="pin-icon" onClick={unpinPerson} className={"w-[50px] h-[50px] bg-[#05050575] backdrop-blur-sm cursor-pointer rounded-3xl absolute flex"}>
+        <button id="pin-icon" onClick={unpinPerson} className={"w-[50px] h-[50px] bg-[#05050575] text-white backdrop-blur-sm cursor-pointer rounded-3xl absolute flex"}>
             <div className="m-auto">
                 <BsFillPinFill />
             </div>
