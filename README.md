@@ -25,11 +25,20 @@ A React 'CRUD' app made with Vite that allows the ability to search, add, pin, a
 ## 📸 Screenshots
 
 ### Light Mode Desktop
-![ConcisetactLightMode](https://github.com/user-attachments/assets/6c019184-6208-4ed5-a065-a47b04c84952)
+![Concisetact-light-desktop](https://github.com/user-attachments/assets/9ed9e029-8756-426f-b2ab-820ededcf7f4)
+
 
 
 ### Dark Mode Desktop
-![ConcisetactDarkMode](https://github.com/user-attachments/assets/d29c8756-e452-458c-a11f-d01d9984e196)
+![Concisetact-dark-desktop](https://github.com/user-attachments/assets/72932c04-89e3-4c3a-8f74-8a1cebfb8308)
 
 
+
+### Light Mode Mobile
+![Concisetact-light-mobile](https://github.com/user-attachments/assets/d1b32537-16cc-4ea0-a771-1c536b0d96d5)
+
+
+
+### Dark Mode Mobile
+![Concisetact-dark-mobile](https://github.com/user-attachments/assets/de7d80c0-6c63-4651-b4ab-815895d171fa)
 
